@@ -1,0 +1,105 @@
+## Basic Configuration
+
+baseurl = "teoechavarria.github.io."
+builddrafts = false
+canonifyurls = false
+languageCode = "en-US"
+
+contentdir = "content"
+layoutdir = "layouts"
+publishdir = "public"
+
+author = "Mateo Echavarria"
+title = "Mateo Echavarria"
+
+theme = "hugo-goa"
+
+## Hugo Built-in Features
+disqusShortname = "https-shenoybr-github-io-hugo-goa-demo" # Comment out to disable Disqus.
+googleAnalytics = "G-NP0249HGMZ"
+enableRobotsTXT = true
+
+## Site Settings
+[params]
+author = "Mateo Echavarria"
+intro = "Mathematician · Data Science · Data Analyst · Power BI Consultant"
+description = ""
+authorimage = "index.jpeg"
+dateformat = "Jul 14, 2023"
+
+## Site Meta Settings
+[params.meta]
+description = "Simple minimalist theme"
+keywords = "minimalist,blog,goa,hugo,developer"
+
+## Social Accounts
+[params.social]
+github = "TeoEchavarria"
+instagram = "teoechavarria_"
+    # xing = "<username>"
+linkedin = "teoechavarria"
+    #twitter = "<username>"
+    #facebook = "<username>"
+    #google = "<username>"
+    #googlescholar = "<account_id>"
+    #orcid = "0123-4567-8901-2345"
+    #stackoverflow = "<username>"
+    #lastfm = "<username>"
+    #goodreads = "<username>"
+    #gitlab = "<username>"
+    #bitbucket = "<username>"
+    #fivehundredpx = "<username>"
+    #flickr = "<username>"
+    #foursquare = "<username>"
+    #hackernews = "<username>"
+    #kickstarter = "<username>"
+    #patreon = "<username>"
+    #pintrest = "<username>"
+    #steam = "<username>"
+    #reddit = "<username>"
+    #snapchat = "<username>"
+    #youtube = "<channelid>"
+    #keybase = "<username>"
+    #twitch = "<username>"
+    #soundcloud = "<username>"
+    #tumblr = "<username>"
+    #strava = "<username>"
+    #skype = "<username>"
+    #telegram = "<username>"
+    #whatsapp = "<username>"
+    #buymeacoffee = "<username>"
+    #kaggle = "<username>"
+    #holopin = "<username>"
+email = "TeoEchavarriaAux@gmail.com"
+    #pgp = "<key_fingerprint>"
+
+## Extras
+[params.extra]
+copyright = "© 2023. Mateo Echavarria."
+poweredby = true
+highlightjs = true
+socialmarkup = true
+toc = true
+displayrssicon = false
+
+## Main Menu
+[[menu.main]]
+    name = "about"
+    identifier = "about"
+    weight = 100
+    url = "/about/"
+[[menu.main]]
+    name = "notes"
+    weight = 200
+    identifier = "blog"
+    url = "/blog/"
+[[menu.main]]
+    name = "courses"
+    identifier = "courses"
+    weight = 300
+    url = "/courses/"
+[[menu.main]]
+    name = "projects"
+    identifier = "projects"
+    weight = 400
+    url = "/projects/"
