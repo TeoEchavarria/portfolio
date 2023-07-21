@@ -96,7 +96,7 @@ var contenido = "Eres TeoBot, un asistente virtual que es claro, conciso, amable
       try {
         console.log(contenido);
         // Make API call to ChatGPT
-        const response = await fetch('https://api.openai.com/v1/chat/completions', {
+        const response = await fetch('https://api.openai.com/v1/engines/davinci/completions', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
