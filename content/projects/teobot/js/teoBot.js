@@ -35,6 +35,52 @@ readme, de ahí podrás sacar información de que es lo que contienen y brindár
 traducir la información si es que esta, está en inglés, para que puedas entender correctamente las preguntas que te hagan. \
 DATOS DE LOS REPOSITORIOS : " ;
 
+
+const accessToken = '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';
+const username = 'TeoEchavarria';
+    
+const apiUrl = 'https://api.github.com/users/TeoEchavarria/repos';
+
+    
+// Make the API request
+$.ajax({
+  url: apiUrl,
+  headers: {
+    Authorization: `Bearer ${accessToken}`
+  },
+  success: function (data) {
+    // Process the response data
+    const repositories = data.map(repo => `<li>${repo.name}</li>`).join('');
+    
+    // Loop through each repository and fetch README
+    data.forEach(repo => {
+      const readmeUrl = `https://api.github.com/repos/TeoEchavarria/${repo.name}/readme`;
+
+      // Make the API request to retrieve the README
+      $.ajax({
+        url: readmeUrl,
+        headers: {
+          Authorization: `Bearer ${accessToken}`
+        },
+        success: function (readmeData) {
+          // Decode the base64-encoded content of the README
+          const readmeContent = atob(readmeData.content);
+
+          contenido += `Nombre del Repositorio = ${repo.name}, contenido = ${readmeContent}`;
+        },
+        error: function (error) {
+          console.log('An error occurred:', error);
+        }
+      });
+    });
+  },
+  error: function (error) {
+    console.log('An error occurred:', error);
+  }
+});
+
+
+
 async function getDataFromAPI() {
   try {
     const response = await fetch('https://flask-prueba.azurewebsites.net/openai'); // Reemplaza 'URL_DE_LA_API' con la URL real de tu API
@@ -74,7 +120,7 @@ async function sendMessage() {
       },
       body: JSON.stringify({
         'model': 'gpt-3.5-turbo',
-        'messages': [{'role': 'system', 'content': contenido}, {'role': 'user', 'content': userInput}],
+        'messages': [{'role': 'system', 'content': contenido}, {'role': 'user', 'content': userInput + ". Recuerda devolvermelo en formato HTML"}],
         "temperature": 0.7
       })
     });
