@@ -35,9 +35,25 @@ readme, de ahí podrás sacar información de que es lo que contienen y brindár
 traducir la información si es que esta, está en inglés, para que puedas entender correctamente las preguntas que te hagan. \
 DATOS DE LOS REPOSITORIOS : " ;
 
+async function getDataFromAPI() {
+  try {
+    const response = await fetch('https://flask-prueba.azurewebsites.net/openai'); // Reemplaza 'URL_DE_LA_API' con la URL real de tu API
+    const data = await response.json();
+
+    if (data.message) {
+      const key = data.message;
+      return key;
+    } else {
+      return null;
+    }
+  } catch (error) {
+    return null;
+  }
+}
+
+
 async function sendMessage() {
   const userInput = document.getElementById('user-input').value;
-  const apiInput = document.getElementById('API-input').value;
 
   if (userInput.trim() === '') {
     return;
@@ -47,13 +63,14 @@ async function sendMessage() {
   document.getElementById('user-input').value = '';
 
   try {
+    const key = await getDataFromAPI();
     console.log(contenido);
     // Make API call to ChatGPT
     const response = await fetch('https://api.openai.com/v1/chat/completions', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
-        'Authorization': 'Bearer ' + apiInput // Replace with your actual API key
+        'Authorization': 'Bearer ' + key // Replace with your actual API key
       },
       body: JSON.stringify({
         'model': 'gpt-3.5-turbo',
