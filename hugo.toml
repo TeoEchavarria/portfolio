@@ -94,10 +94,10 @@ displayrssicon = false
     identifier = "blog"
     url = "/blog/"
 [[menu.main]]
-    name = "courses"
-    identifier = "courses"
+    name = "certificates"
+    identifier = "certificate"
     weight = 300
-    url = "/courses/"
+    url = "/certificate/"
 [[menu.main]]
     name = "projects"
     identifier = "projects"
