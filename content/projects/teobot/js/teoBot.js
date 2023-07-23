@@ -28,8 +28,7 @@ preguntas muy personales, o pregutas que no son de tono profesional, dile que es
 Intentando que las respuestas sean cortas y no revelen demasiada información.Te enviaré información de mis repositorios de GitHub, y sus correspondientes\
 readme, de ahí podrás sacar información de que es lo que contienen y brindárselas más fácilmente al usuario final, recuerda \
 traducir la información si es que esta, está en inglés, para que puedas entender correctamente las preguntas que te hagan. \
-DATOS DE LOS REPOSITORIOS : " ;
-
+DATOS DE LOS REPOSITORIOS O PROYECTOS : " ;
 
 async function getDataFromAPI(solicitud) {
   try {
@@ -51,50 +50,48 @@ const username = 'TeoEchavarria';
     
 const apiUrl = 'https://api.github.com/users/TeoEchavarria/repos';
 
-async function makeAjaxRequest() {
+const repositories = [
+  'teoechavarria/science',
+  'teoechavarria/challenges',
+  'teoechavarria/Induccion_MeIA',
+  'teoechavarria/CodeWars',
+  'teoechavarria/ReportesML',
+  'teoechavarria/FlaskProject',
+  'teoechavarria/project_cripto_2002_02',
+  'teoechavarria/FastAPI-IoT',
+  'teoechavarria/QueisProject',
+  'teoechavarria/FastAPI-Tweeter'
+];
+
+async function getReadmeContent(repo) {
   const accessToken = await getDataFromAPI("github");
-  console.log(accessToken)
-  return new Promise((resolve, reject) => {
-    // Make the API request
-    $.ajax({
-      url: apiUrl,
-      headers: {
-        Authorization: `Bearer ${accessToken}`
-      },
-      success: function (data) {
-        // Process the response data
-        const repositories = data.map(repo => `<li>${repo.name}</li>`).join('');
-        
-        // Loop through each repository and fetch README
-        data.forEach(repo => {
-          const readmeUrl = `https://api.github.com/repos/TeoEchavarria/${repo.name}/readme`;
+  const url = `https://api.github.com/repos/${repo}/readme`;
+  const headers = {
+    'Authorization': `Bearer ${accessToken}`
+  };
 
-          // Make the API request to retrieve the README
-          $.ajax({
-            url: readmeUrl,
-            headers: {
-              Authorization: `Bearer ${accessToken}`
-            },
-            success: function (readmeData) {
-              // Decode the base64-encoded content of the README
-              const readmeContent = atob(readmeData.content);
+  try {
+    const response = await fetch(url, { headers });
+    const data = await response.json();
+    return atob(data.content); // Decodifica el contenido base64 del README
+  } catch (error) {
+    console.error(`Error al obtener el README del repositorio ${repo}:`, error);
+    return '';
+  }
+}
 
-              contenido += `Nombre del Repositorio = ${repo.name}, contenido = ${readmeContent}`;
-            },
-            error: function (error) {
-              console.log('An error occurred:', error);
-            }
-          });
-        });
-      },
-      error: function (error) {
-        console.log('An error occurred:', error);
+    // Función para cargar el contenido de todos los README y mostrarlo en la página
+    async function loadReadmes() {
+      for (const repo of repositories) {
+        const readmeContent = await getReadmeContent(repo);
+        const repoName = repo.split('/')[1];
+
+        contenido += `ProjectName = <${repoName}>, Content = <${readmeContent}>`
+
       }
-    });
-  });
-} 
-
-makeAjaxRequest();
+    }
+  
+    window.onload = loadReadmes;
 
 
 async function sendMessage() {
@@ -109,7 +106,6 @@ async function sendMessage() {
 
   try {
     const key = await getDataFromAPI("openai");
-    console.log(contenido);
     // Make API call to ChatGPT
     const response = await fetch('https://api.openai.com/v1/chat/completions', {
       method: 'POST',
@@ -118,9 +114,10 @@ async function sendMessage() {
         'Authorization': 'Bearer ' + key // Replace with your actual API key
       },
       body: JSON.stringify({
-        'model': 'gpt-3.5-turbo',
-        'messages': [{'role': 'system', 'content': contenido}, {'role': 'user', 'content': userInput + ". Recuerda devolvermelo en formato HTML"}],
-        "temperature": 0.7
+        'model': 'gpt-3.5-turbo-16k',
+        'messages': [{'role': 'system', 'content': contenido}, {'role': 'user', 'content': userInput + ". Recuerda devolvermelo en formato HTML y que las respuetas sean lo mas cortas posibles."}],
+        "temperature": 0.7,
+        'frequency_penalty': 0.8,
       })
     });
 
