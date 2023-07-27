@@ -1,6 +1,6 @@
 ## Basic Configuration
 
-baseurl = "https://teoechavarria.github.io/"
+baseurl = "teoechavarria.github.io/"
 builddrafts = false
 canonifyurls = false
 languageCode = "en-US"
