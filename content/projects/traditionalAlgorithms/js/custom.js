@@ -1,4 +1,4 @@
-function handleFile() {
+async function handleFile() {
     const fileInput = document.getElementById('fileInput');
     const outputDiv = document.getElementById('output');
   
