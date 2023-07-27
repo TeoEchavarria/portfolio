@@ -16,7 +16,7 @@ async function handleFile() {
 
     // Ahora tienes los datos del archivo Excel en la variable 'excelData'
     console.log(excelData);
-    outputDiv.innerHTML = JSON.stringify(excelData);
+    //outputDiv.innerHTML = JSON.stringify(excelData);
 
     // Graficar los datos utilizando Chart.js
     const xData = excelData.map(row => row[0]); // Suponiendo que la columna X está en la posición 0

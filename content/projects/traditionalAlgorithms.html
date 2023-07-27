@@ -9,10 +9,23 @@ showpagemeta = false
 showcomments = false
 +++
 
-<input type="file" id="fileInput">
-<button onclick="handleFile()">Cargar archivo</button>
-<div id="output"></div>
+<p>En esta sesión, tendrás la oportunidad de cargar un archivo de Excel con solo 2 columnas que contenga 
+un conjunto de datos bidimensionales. A partir de esto, podrás seleccionar diversos algoritmos para determinar 
+cuál se ajusta mejor a tus datos. Las opciones incluyen modelos de regresión lineal, regresión múltiple, clustering, entre otros.</p>
+    
+<p>Durante el proceso, podrás visualizar y comparar los resultados obtenidos con diferentes algoritmos, 
+    lo que te permitirá identificar el enfoque más adecuado para analizar tu conjunto de datos. Además, 
+    tendrás la flexibilidad de ajustar parámetros y configuraciones para mejorar la precisión y el rendimiento de los modelos.</p>
+    
+<p>Nuestro objetivo es proporcionarte una experiencia interactiva y práctica que te ayude a comprender mejor tus datos y facilitar la toma de decisiones fundamentadas basadas en el análisis realizado.</p>
 
+
+<div class="input-group">
+    <input type="file" class="form-control" id="fileInput" aria-describedby="inputGroupFileAddon04" aria-label="Upload">
+    <button class="btn btn-outline-secondary" type="button" onclick="handleFile()">Cargar archivo</button>
+  </div>
+
+<div id="output"></div>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.17.0/xlsx.full.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
