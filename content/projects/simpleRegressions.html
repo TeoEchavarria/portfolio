@@ -1,0 +1,38 @@
++++
+categories = ["about"]
+comments = false
+date = "2023-07-25"
+draft = false
+tags = ["algorithms"]
+title = "Simple Regressions"
+showpagemeta = false
+showcomments = false
++++
+
+<p>En esta sesión, tendrás la oportunidad de cargar un archivo de Excel con solo 2 columnas que contenga 
+un conjunto de datos bidimensionales. A partir de esto, podrás seleccionar dos diferentes algoritmos para determinar 
+cuál se ajusta mejor a tus datos. Las opciones incluyen modelos de regresión lineal y regresión logistica.</p>
+     
+<p>Mi objetivo es proporcionarte una experiencia interactiva y práctica que te ayude a comprender mejor tus datos y facilitar la toma de decisiones fundamentadas basadas en el análisis realizado.</p>
+
+
+<div class="input-group">
+    <input type="file" class="form-control" id="fileInput" aria-describedby="inputGroupFileAddon04" aria-label="Upload">
+    <button class="btn btn-outline-secondary" type="button" onclick="handleFile()">Cargar archivo</button>
+</div>
+
+<div class="dropdown mt-2">
+    <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+        Algorithms
+    </button>
+    <ul class="dropdown-menu">
+        <li><a class="dropdown-item" href="#">Linear regression </a></li>
+        <li><a class="dropdown-item" href="#">Polynomial Regression</a></li>
+    </ul>
+</div>
+
+<div id="output"></div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.17.0/xlsx.full.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="../js/simpleRegressions.js"></script>
