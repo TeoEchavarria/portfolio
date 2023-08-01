@@ -50,7 +50,7 @@ async function handleFile() {
       const ctx = document.createElement('canvas');
       outputDiv.appendChild(ctx);
 
-      async function createCanva(X, Y, prediction){
+      async function createCanva(X, Y, prediction, xtrain){
         new Chart(ctx, {
           type: 'scatter', // Puedes cambiar el tipo de gráfico aquí (line, bar, pie, etc.)
           data: {
@@ -69,8 +69,8 @@ async function handleFile() {
               borderColor: 'rgba(255, 125, 0, 1)',
               backgroundColor: 'rgba(255, 125, 0, 0.2)',
               borderWidth: 1
-            }
-          ]
+            },  
+          ],
           },
           options: {
             responsive: true,
@@ -88,8 +88,9 @@ async function handleFile() {
       }
       
       async function predinctionFunction(){
-        const prediction = await getDataFromAPI("lineal");
-        createCanva(xData, yData, prediction);
+        const data = await getDataFromAPI("lineal");
+        console.log(data);
+        createCanva(xData, yData, data);
       }
       
       predinctionFunction();
