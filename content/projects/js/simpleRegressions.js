@@ -18,7 +18,13 @@ async function handleFile() {
       const xData = excelData.map(row => row[0]); // Suponiendo que la columna X está en la posición 0
       const yData = excelData.map(row => row[1]); // Suponiendo que la columna Y está en la posición 1
 
-      async function getDataFromAPI(solicitud) {
+      const ctx = document.createElement('canvas');
+      outputDiv.appendChild(ctx);
+
+      // FUNCIONES
+
+      //Consumo mi API para generar las predicciones
+      async function getDataFromAPI() {
         const dataBody = {
           "X": xData,
           "Y": yData,
@@ -33,7 +39,6 @@ async function handleFile() {
         };
 
         try {
-
           const response = await fetch(`https://flaskmlaz.azurewebsites.net/lineal`, requestOptions);
           const data = await response.json();
       
@@ -46,11 +51,9 @@ async function handleFile() {
           return null;
         }
       }
-
-      const ctx = document.createElement('canvas');
-      outputDiv.appendChild(ctx);
-
-      async function createCanva(X, Y, prediction, xtrain){
+      
+      //Creacion del Canvas para graficar
+      async function createCanva(X, Y, prediction){
         new Chart(ctx, {
           type: 'scatter', // Puedes cambiar el tipo de gráfico aquí (line, bar, pie, etc.)
           data: {
@@ -87,12 +90,13 @@ async function handleFile() {
         });
       }
       
+      //Union del consumo del API y la implementacion de la grafica
       async function predinctionFunction(){
         const data = await getDataFromAPI("lineal");
-        console.log(data);
         createCanva(xData, yData, data);
       }
       
+      //Llamada a la Funcion
       predinctionFunction();
       
     };
