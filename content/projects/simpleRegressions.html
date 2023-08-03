@@ -16,21 +16,17 @@ cuál se ajusta mejor a tus datos. Las opciones incluyen modelos de regresión l
 <p>Mi objetivo es proporcionarte una experiencia interactiva y práctica que te ayude a comprender mejor tus datos y facilitar la toma de decisiones fundamentadas basadas en el análisis realizado.</p>
 
 
+<select class="form-select mb-2" aria-label="Default select example">
+    <option selected>Algorithms</option>
+    <option value="1">Linear regression </option>
+    <option value="2">Polynomial Regression</option>
+</select>
+
 <div class="input-group">
     <input type="file" class="form-control" id="fileInput" aria-describedby="inputGroupFileAddon04" aria-label="Upload">
-    <button class="btn btn-outline-secondary" type="button" onclick="handleFile()">Cargar archivo</button>
+    <button class="btn btn-outline-secondary" type="button" onclick="handleFile()">Graficar</button>
 </div>
 
-<!-- 
-<div class="dropdown mt-2">
-    <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-        Algorithms
-    </button>
-    <ul class="dropdown-menu">
-        <li><a class="dropdown-item" href="#">Linear regression </a></li>
-        <li><a class="dropdown-item" href="#">Polynomial Regression</a></li>
-    </ul>
-</div>-->
 
 <div id="output"></div>
 
