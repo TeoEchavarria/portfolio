@@ -1,6 +1,9 @@
+let chart;
+
 async function handleFile() {
+    console.log("CORRIENDO")
     const fileInput = document.getElementById('fileInput');
-    const outputDiv = document.getElementById('output');
+    //const outputDiv = document.getElementById('output');
   
     const file = fileInput.files[0];
     const reader = new FileReader();
@@ -18,13 +21,25 @@ async function handleFile() {
       const xData = excelData.map(row => row[0]); // Suponiendo que la columna X está en la posición 0
       const yData = excelData.map(row => row[1]); // Suponiendo que la columna Y está en la posición 1
 
-      const ctx = document.createElement('canvas');
-      outputDiv.appendChild(ctx);
+      const puntos = [];
+      
+      for (let i = 0; i < xData.length; i++) {
+        puntos.push({ x: xData[i], y: yData[i] });
+      }
+   
+      const ctx = document.getElementById('chartCanvas').getContext('2d');
+      //const ctx = document.createElement('canvas');
+      //outputDiv.appendChild(ctx);
+
+      // Primero seleccionamos el elemento <select> del DOM por su id
+      const selectElement = document.getElementById('miSelect');
+      // Obtenemos el valor de la opción seleccionada
+      const selectedOptionValue = selectElement.value;
 
       // FUNCIONES
 
       //Consumo mi API para generar las predicciones
-      async function getDataFromAPI() {
+      async function getDataFromAPI(solicitud) {
         const dataBody = {
           "X": xData,
           "Y": yData,
@@ -39,11 +54,13 @@ async function handleFile() {
         };
 
         try {
-          const response = await fetch(`https://flaskmlaz.azurewebsites.net/lineal`, requestOptions);
+          const response = await fetch(`https://flaskmlaz.azurewebsites.net/${solicitud}`, requestOptions);
           const data = await response.json();
+
+          console.log(data.prediction)
       
-          if (data.prediction) {
-            return data.prediction;
+          if (data.prediction && data.xTrain) {
+            return [data.prediction, data.xTrain];
           } else {
             return null;
           }
@@ -53,47 +70,79 @@ async function handleFile() {
       }
       
       //Creacion del Canvas para graficar
-      async function createCanva(X, Y, prediction){
-        new Chart(ctx, {
-          type: 'scatter', // Puedes cambiar el tipo de gráfico aquí (line, bar, pie, etc.)
-          data: {
-            labels: X,
-            datasets: [{
-              label: 'Datos Y',
-              data: Y,
-              borderColor: 'rgba(0, 10, 192, 1)',
-              backgroundColor: 'rgba(0, 10, 192, 0.3)',
-              borderWidth: 1
-            },
+      async function createCanva(X, puntos, prediction, X_train){
+        const data1 = {
+          labels1: X,
+          datasets: [
             {
-              label: 'Preddictions',
-              data: prediction,
-              type: 'line', // Tipo de gráfico para el segundo conjunto de datos (scatter)
-              borderColor: 'rgba(255, 125, 0, 1)',
-              backgroundColor: 'rgba(255, 125, 0, 0.2)',
-              borderWidth: 1
-            },  
+              label: 'Conjunto 1',
+              data: puntos,
+              borderColor: 'rgba(255, 99, 132, 1)',
+              backgroundColor: 'rgba(255, 99, 132, 0.2)',
+            },
           ],
+        };
+    
+        // Datos del segundo conjunto
+        const data2 = {
+          labels2: X_train,
+          datasets: [
+            {
+              label: 'Conjunto 2',
+              data: prediction,
+              type: 'line',
+              borderColor: 'rgba(54, 162, 235, 1)',
+              backgroundColor: 'rgba(54, 162, 235, 0.2)',
+            },
+          ],
+        };
+
+        // Configuración de la gráfica
+        const options = {
+          scales: {
+            x: {
+              type: 'linear',
+              position: 'bottom',
+            },
+            y: {
+              type: 'linear',
+              position: 'left',
+            },
           },
-          options: {
-            responsive: true,
-            scales: {
-              x: {
-                type: 'category',
-                position: 'bottom'
-              },
-              y: {
-                beginAtZero: true
-              }
-            }
-          }
-        });
+        };
+        
+
+        if(!chart){
+           chart = new Chart(ctx, {
+            type: 'scatter',
+            data: {
+              datasets: [data1.datasets[0], data2.datasets[0]],
+            },
+            options: options,
+          });
+        }else {
+          // Si la instancia de Chart.js ya existe, actualizamos los datos
+          chart.data.labels1 = X;
+          chart.data.labels2 = X_train;
+          chart.data.datasets = [data1.datasets[0], data2.datasets[0]];
+          chart.update();
+        }
       }
       
       //Union del consumo del API y la implementacion de la grafica
       async function predinctionFunction(){
-        const data = await getDataFromAPI("lineal");
-        createCanva(xData, yData, data);
+        var data;
+
+        // Usamos un if para realizar una acción basada en el valor seleccionado
+        if (selectedOptionValue === '1') {
+          data = await getDataFromAPI("lineal");
+        } else if (selectedOptionValue === '2') {
+          data = await getDataFromAPI("polynomial");
+        } else {
+          console.log('Opción no reconocida');
+        }
+        
+        createCanva(xData, puntos, data[0], data[1]);
       }
       
       //Llamada a la Funcion

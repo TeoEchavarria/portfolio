@@ -16,8 +16,7 @@ cuál se ajusta mejor a tus datos. Las opciones incluyen modelos de regresión l
 <p>Mi objetivo es proporcionarte una experiencia interactiva y práctica que te ayude a comprender mejor tus datos y facilitar la toma de decisiones fundamentadas basadas en el análisis realizado.</p>
 
 
-<select class="form-select mb-2" aria-label="Default select example">
-    <option selected>Algorithms</option>
+<select class="form-select mb-2" aria-label="Default select example" id="miSelect">
     <option value="1">Linear regression </option>
     <option value="2">Polynomial Regression</option>
 </select>
@@ -27,6 +26,7 @@ cuál se ajusta mejor a tus datos. Las opciones incluyen modelos de regresión l
     <button class="btn btn-outline-secondary" type="button" onclick="handleFile()">Graficar</button>
 </div>
 
+<canvas id="chartCanvas" width="400" height="200"></canvas>
 
 <div id="output"></div>
 
