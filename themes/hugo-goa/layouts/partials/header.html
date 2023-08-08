@@ -8,6 +8,7 @@
 
 {{ with .Site.Params.meta.description }}<meta name="description" content="{{ . }}">{{ end }}
 {{ with .Site.Params.meta.keywords }}<meta name="keywords" content="{{.}}">{{ end }}
+{{ if isset .Params "redirection" }}<meta name="redirection" http-equiv="refresh" content="0;url={{.Params.redirection}}">{{ end }}
 
 <title>
 {{ $url := replace .Permalink ( printf "%s" .Site.BaseURL) "" }} {{ if eq $url "" }} {{ .Site.Title }} {{ else }} {{ .Site.Title }} - {{ .Title }} {{ end }}
