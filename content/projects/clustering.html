@@ -1,0 +1,34 @@
++++
+categories = ["about"]
+comments = false
+date = "2023-08-12"
+draft = false
+tags = ["algorithms"]
+title = "Clustering"
+showpagemeta = false
+showcomments = false
++++
+
+<p>En esta sesión, tendrás la oportunidad de cargar un archivo de Excel. A partir de esto, podrás seleccionar dos diferentes algoritmos para clasificar 
+     tus datos. Las opciones incluyen modelos de clasificacion Logistica y clasificacion Nearest Neighbors.</p>
+         
+    <p>Mi objetivo es proporcionarte una experiencia interactiva y práctica que te ayude a comprender mejor tus datos y facilitar la toma de decisiones fundamentadas basadas en el análisis realizado.</p>
+    
+    
+    <select class="form-select mb-2" aria-label="Default select example" id="miSelect">
+        <option value="1">Nearest Neighbors</option>
+        <option value="2">Logistics</option>
+    </select>
+    
+    <div class="input-group">
+        <input type="file" class="form-control" id="fileInput" aria-describedby="inputGroupFileAddon04" aria-label="Upload">
+        <button class="btn btn-outline-secondary" type="button" onclick="handleFile()">Graficar</button>
+    </div>
+    
+    <canvas id="chartCanvas" width="400" height="200"></canvas>
+    
+    <div id="output"></div>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.17.0/xlsx.full.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="../js/clustering.js"></script>
