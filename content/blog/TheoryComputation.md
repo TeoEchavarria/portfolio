@@ -2,7 +2,7 @@
 categories = ["note"]
 comments = true
 date = "2023-08-15"
-draft = true
+draft = false
 showpagemeta = true
 showcomments = true
 slug = ""
