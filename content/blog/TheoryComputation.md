@@ -12,3 +12,4 @@ title = "Theory of computation"
 Dentro de este modulo se desglosaran diversos temas, entre ellos: Automatas Finitos, Lenguajes Regulares, Maquinas de Turing, Computabilidad y Complejidad Computacional.
 
 - [String](../../sub_blog/theorycomputation/string/)
+- [Automatas Finitos](../../sub_blog/theorycomputation/automatafinito/)
