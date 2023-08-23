@@ -6,7 +6,7 @@ draft = false
 showpagemeta = true
 showcomments = true
 slug = ""
-tags = ["udemy", "ciencias", "ML"]
+tags = ["udemy", "ciencias", "ML", "UNAM"]
 title = "Neural Networks"
 +++
 
