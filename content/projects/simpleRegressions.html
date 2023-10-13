@@ -15,21 +15,13 @@ cuál se ajusta mejor a tus datos. Las opciones incluyen modelos de regresión l
      
 <p>Mi objetivo es proporcionarte una experiencia interactiva y práctica que te ayude a comprender mejor tus datos y facilitar la toma de decisiones fundamentadas basadas en el análisis realizado.</p>
 
-
-<select class="form-select mb-2" aria-label="Default select example" id="miSelect">
-    <option value="1">Linear regression </option>
-    <option value="2">Polynomial Regression</option>
-</select>
-
-<div class="input-group">
-    <input type="file" class="form-control" id="fileInput" aria-describedby="inputGroupFileAddon04" aria-label="Upload">
-    <button class="btn btn-outline-secondary" type="button" onclick="handleFile()">Graficar</button>
-</div>
-
-<canvas id="chartCanvas" width="400" height="200"></canvas>
-
-<div id="output"></div>
+<iframe
+  src="https://ml-teoechavarria.streamlit.app/Simple_Regression/?embed=true"
+  height="450"
+  style="width:100%;border:none;"
+></iframe>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.17.0/xlsx.full.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <script src="../js/simpleRegressions.js"></script>
+
