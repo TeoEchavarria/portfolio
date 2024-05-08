@@ -98,3 +98,7 @@ displayrssicon = false
     identifier = "projects"
     weight = 400
     url = "/projects/"
+[[menu.main]]
+    name = "cv"
+    weight = 500
+    url = "https://teoechavarria.github.io/MateoEchavarriaSierra.pdf"
