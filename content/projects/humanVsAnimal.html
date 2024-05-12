@@ -42,25 +42,32 @@ showcomments = false
         const gender = document.getElementById('gender').value;
         const age = document.getElementById('age').value;
     
-        const url = 'https://humanvsanimal.azurewebsites.net/api/prediction?gener=male&age=18-34';
-    
-        let resultData = {}; // Initialize an empty object to store the result
-
-        fetch(url,  {mode: 'no-cors'})
-        .then(response => {
-            if (!response.ok) {
-            throw new Error('Network response was not ok');
-            }
-            return response.json();
-        })
-        .then(data => {
-            resultData = data; // Store the fetched data into the variable
-            console.log('Data saved:', resultData); // Log the data to verify it's saved
-            displayCards(resultData)
-        })
-        .catch(error => {
-            console.error('There was a problem with the fetch operation:', error);
+        const baseUrl = 'https://humanvsanimal.azurewebsites.net/api/prediction';
+        const queryParams = new URLSearchParams({
+            gener: 'male',
+            age: '18-34'
         });
+
+        // Create the full URL with parameters
+        const urlWithParams = `${baseUrl}?${queryParams}`;
+
+        // Set up the headers
+        const headers = new Headers();
+        headers.append('Cache-Control', 'no-cache');
+        headers.append('Content-Length', '0'); // Usually not needed in Fetch API, may omit if causing issues
+        headers.append('User-Agent', 'PostmanRuntime/7.37.3');
+        headers.append('Accept', '*/*');
+        headers.append('Accept-Encoding', 'gzip, deflate, br'); // Not necessary in browser context
+        headers.append('Connection', 'keep-alive');
+
+        // Create the fetch request
+        fetch(urlWithParams, {
+            method: 'POST', // POST method
+            headers: headers,
+        })
+        .then(response => response.json())
+        .then(data => console.log('Success:', data))
+        .catch(error => console.error('Error:', error));
     }
     
     function displayCards(animals) {
