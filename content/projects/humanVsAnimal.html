@@ -41,21 +41,29 @@ showcomments = false
     function loadData() {
         const gender = document.getElementById('gender').value;
         const age = document.getElementById('age').value;
-
-        $.ajax({
-            url: 'https://humanvsanimal.azurewebsites.net/api/prediction?',
-            type: 'POST',
-            contentType: 'application/json',
-            body: JSON.stringify({ 'age': "18-34", 'gender': "female" }),
-            success: function (data) {
-                displayCards(data);
+    
+        const url = 'https://humanvsanimal.azurewebsites.net/api/prediction?';
+        const data = {
+            age: age,
+            gender: gender
+        };
+    
+        fetch(url, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
             },
-            error: function () {
-                alert('Error retrieving data.');
-            }
+            body: JSON.stringify(data),
+        })
+        .then(response => response.json())
+        .then(data => {
+            displayCards(data);
+        })
+        .catch((error) => {
+            alert('Error retrieving data.');
         });
     }
-
+    
     function displayCards(animals) {
         const container = document.getElementById('cardsContainer');
         container.innerHTML = ''; // Clear previous cards
