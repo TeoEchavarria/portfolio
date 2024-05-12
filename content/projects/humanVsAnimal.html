@@ -43,10 +43,10 @@ showcomments = false
         const age = document.getElementById('age').value;
 
         $.ajax({
-            url: 'https://humanvsanimal.azurewebsites.net/api/prediction',
+            url: 'https://humanvsanimal.azurewebsites.net/api/prediction?',
             type: 'POST',
             contentType: 'application/json',
-            body: JSON.stringify({ 'age': "18-34", 'gender': "female" }),
+            body: { 'age': "18-34", 'gender': "female" },
             success: function (data) {
                 displayCards(data);
             },
