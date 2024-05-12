@@ -10,26 +10,36 @@ showcomments = false
 +++
 
 <div class="container mt-5">
-    <h2>Select Gender and Age</h2>
     <form id="selectionForm">
-        <div class="form-group">
-            <label for="gender">Gender:</label>
-            <select class="form-control" id="gender">
-                <option value="male">Male</option>
-                <option value="female">Female</option>
-                <option value="other">Other</option>
-            </select>
+        <div class="form-row">
+            <!-- Gender Selection -->
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="gender">Generp:</label>
+                    <select class="form-control" id="gender">
+                        <option value="male">Masculino</option>
+                        <option value="female">Femenino</option>
+                    </select>
+                </div>
+            </div>
+    
+            <!-- Age Group Selection -->
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="age">Edad:</label>
+                    <select class="form-control" id="age">
+                        <option value="18-34">18-34</option>
+                        <option value="35-54">35-54</option>
+                        <option value="55+">55+</option>
+                    </select>
+                </div>
+            </div>
         </div>
-        <div class="form-group">
-            <label for="age">Age Group:</label>
-            <select class="form-control" id="age">
-                <option value="18-34">18-34</option>
-                <option value="35-55">35-55</option>
-                <option value="55+">55+</option>
-            </select>
-        </div>
-        <button type="button" class="btn btn-primary" onclick="loadData()">Submit</button>
+    
+        <!-- Submit Button -->
+        <button type="button" class="btn btn-primary col-12" onclick="loadData()">Predecir Batallas ⚔️</button>
     </form>
+    
     <div id="cardsContainer" class="row mt-3">
         <!-- Bootstrap cards will be appended here -->
     </div>
@@ -67,7 +77,7 @@ showcomments = false
         })
         .then(response => response.json())
         .then(data => displayCards(data))
-        .catch(error => console.error('Error:', error));
+        .catch(error =>  displayCards({"rat": {"win": 68.0, "lose": 19.0, "unknown": 13.0}, "house cat": {"win": 64.0, "lose": 20.0, "unknown": 16.0}, "medium sized dog": {"win": 39.0, "lose": 38.0, "unknown": 22.0}, "large dog": {"win": 15.0, "lose": 53.0, "unknown": 18.0}, "kangaroo": {"win": 11.0, "lose": 74.0, "unknown": 16.0}, "eagle": {"win": 23.0, "lose": 60.0, "unknown": 17.0}, "grizzly bear": {"win": 6.0, "lose": 85.0, "unknown": 9.0}, "wolf": {"win": 9.0, "lose": 82.0, "unknown": 16.0}, "lion": {"win": 8.0, "lose": 84.0, "unknown": 8.0}, "gorilla": {"win": 8.0, "lose": 84.0, "unknown": 8.0}, "chimpanzee": {"win": 22.0, "lose": 70.0, "unknown": 18.0}, "king cobra": {"win": 23.0, "lose": 58.0, "unknown": 12.0}, "elephant": {"win": 8.0, "lose": 83.0, "unknown": 10.0}, "crocodile": {"win": 8.0, "lose": 82.0, "unknown": 10.0}, "goose": {"win": 51.0, "lose": 31.0, "unknown": 16.0}}));
     }
     
     function displayCards(animals) {
@@ -76,9 +86,9 @@ showcomments = false
         Object.keys(animals).forEach(animalName => {
             const animal = animals[animalName];
             const cardHtml = `
-                <div class="col-md-4">
+                <div class="col-md-4 mb-4">
                     <div class="card">
-                        <img src="placeholder_image_url.jpg" class="card-img-top" alt="${animalName}">
+                        <img src="${animal.imageUrl}" class="card-img-top" alt="${animalName}">
                         <div class="card-body">
                             <h5 class="card-title">${animalName}</h5>
                             <p class="card-text">Win: ${animal.win}%</p>
