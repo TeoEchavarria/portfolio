@@ -55,13 +55,16 @@ showcomments = false
             },
             body: JSON.stringify(data),
         })
-        .then(response => response)
+        .then(response => {
+            console.log(response)
+            response.json()
+        })
         .then(data => {
             console.log(data)
             displayCards(data);
         })
         .catch((error) => {
-            alert('Error retrieving data.');
+            console.error(error);
         });
     }
     
