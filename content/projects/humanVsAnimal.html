@@ -38,33 +38,28 @@ showcomments = false
 <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 <script>
-    function loadData() {
+    async function loadData() {
         const gender = document.getElementById('gender').value;
         const age = document.getElementById('age').value;
     
-        const url = 'https://humanvsanimal.azurewebsites.net/api/prediction';
-        const data = {
-            age: age,
-            gender: gender
-        };
+        const url = 'https://humanvsanimal.azurewebsites.net/api/prediction?gener=male&age=18-34';
     
-        fetch(url, {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify(data),
-        })
+        let resultData = {}; // Initialize an empty object to store the result
+
+        fetch(url,  {mode: 'no-cors'})
         .then(response => {
-            console.log(response)
-            response.json()
+            if (!response.ok) {
+            throw new Error('Network response was not ok');
+            }
+            return response.json();
         })
         .then(data => {
-            console.log(data)
-            displayCards(data);
+            resultData = data; // Store the fetched data into the variable
+            console.log('Data saved:', resultData); // Log the data to verify it's saved
+            displayCards(resultData)
         })
-        .catch((error) => {
-            console.error(error);
+        .catch(error => {
+            console.error('There was a problem with the fetch operation:', error);
         });
     }
     
