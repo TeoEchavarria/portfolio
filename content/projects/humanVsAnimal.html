@@ -46,7 +46,7 @@ showcomments = false
             url: 'https://humanvsanimal.azurewebsites.net/api/prediction?',
             type: 'POST',
             contentType: 'application/json',
-            body: { 'age': "18-34", 'gender': "female" },
+            body: JSON.stringify({ 'age': "18-34", 'gender': "female" }),
             success: function (data) {
                 displayCards(data);
             },
