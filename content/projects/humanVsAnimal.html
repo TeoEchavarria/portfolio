@@ -81,22 +81,43 @@ showcomments = false
     }
     
     function displayCards(animals) {
+        const shuffledKeys = Object.keys(animals).sort(() => 0.5 - Math.random());
+        animals = shuffledKeys.reduce((acc, key) => (acc[key] = animals[key], acc), {});
         const container = document.getElementById('cardsContainer');
         container.innerHTML = ''; // Clear previous cards
         Object.keys(animals).forEach(animalName => {
             const animal = animals[animalName];
             const cardHtml = `
-                <div class="col-md-4 mb-4">
-                    <div class="card">
-                        <img src="${animal.imageUrl}" class="card-img-top" alt="${animalName}">
-                        <div class="card-body">
-                            <h5 class="card-title">${animalName}</h5>
-                            <p class="card-text">Win: ${animal.win}%</p>
-                            <p class="card-text">Lose: ${animal.lose}%</p>
-                            <p class="card-text">Unknown: ${animal.unknown}%</p>
+            <div class="col-md-4 mb-4">
+                <div class="card h-100">
+                    <div class="img-container" style="height: 200px; overflow: hidden;">
+                        <img src="${animal.imageUrl}" class="card-img-top img-fluid" alt="${animalName}" style="width: 100%; object-fit: cover;">
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">${animalName}</h5>
+                        <div class="mb-2">
+                            <span>Win: ${animal.win}%</span>
+                            <div class="progress">
+                                <div class="progress-bar" role="progressbar" style="width: ${animal.win}%" aria-valuenow="${animal.win}" aria-valuemin="0" aria-valuemax="100"></div>
+                            </div>
+                        </div>
+                        <div class="mb-2">
+                            <span>Lose: ${animal.lose}%</span>
+                            <div class="progress">
+                                <div class="progress-bar bg-danger" role="progressbar" style="width: ${animal.lose}%" aria-valuenow="${animal.lose}" aria-valuemin="0" aria-valuemax="100"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <span>Unknown: ${animal.unknown}%</span>
+                            <div class="progress">
+                                <div class="progress-bar bg-warning" role="progressbar" style="width: ${animal.unknown}%" aria-valuenow="${animal.unknown}" aria-valuemin="0" aria-valuemax="100"></div>
+                            </div>
                         </div>
                     </div>
                 </div>
+            </div>
+            
+            
             `;
             container.innerHTML += cardHtml;
         });
