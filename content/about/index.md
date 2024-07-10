@@ -4,14 +4,15 @@ comments = false
 date = "2023-07-13"
 draft = false
 tags = ["about"]
-title = "About"
+title = "Welcome to My Professional Journey"
 showpagemeta = false
 showcomments = false
 +++
 
-Hola! Soy Mateo Echavarria Sierra,
-un Analista Junior con habilidades y experiencia en el uso de herramientas para el análisis de datos, incluyendo Python, R y Power BI.
+Hello, I'm *Mateo Echavarria Sierra*, a dedicated **Junior Analyst** with a passion for harnessing the power of ***Python*** and advanced analytics to transform data into intelligent, strategic decisions. Throughout my career, I've focused on enhancing the accuracy and efficiency of ***forecasting models*** and processes, achieving significant improvements that have set new standards in operational excellence.
 
-En mi trabajo, me enfoco en recopilar, limpiar y analizar datos utilizando técnicas estadísticas y de modelado para proporcionar información precisa y valiosa. He colaborado en diversidad de proyectos y estoy constantemente aprendiendo para mejorar mis destrezas y conocimientos.
+- **Explore my projects:** Dive into practical examples of how I've improved the accuracy and efficiency of forecasts, lots of mathematical, applied and miscellaneous crazy stuff.
 
-En mi perfil encontrarás información sobre algunos de los proyectos en los que he trabajado, así como mi información de contacto. ¡Gracias por visitar mi perfil!
+- **Visit my CV:** For a deeper technical view of my skills and career path, take a look at my detailed CV.
+
+- **View my certificates:** Are you interested in my academic and professional development background? My certificates highlight the specialized training and education I have pursued in analytics and beyond.
