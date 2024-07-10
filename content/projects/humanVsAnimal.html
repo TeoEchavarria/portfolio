@@ -9,11 +9,10 @@ showpagemeta = false
 showcomments = false
 +++
 
-<p>En este proyecto personal, aplico técnicas avanzadas de aprendizaje automático junto con Azure Functions y Python para predecir los resultados de enfrentamientos ficticios a puño limpio contra 15 animales distintos. </p>
-
-<p>He desarrollado tres modelos especializados de machine learning, uno para cada posible resultado—ganar, perder o resultado incierto—, permitiéndome evaluar con precisión las probabilidades en cada escenario. </p>
-
-<p>Dada la complejidad de analizar múltiples especies y resultados, el proceso de predicción puede requerir tiempo adicional, lo que destaca la eficacia del sistema en manejar tareas de clasificación múltiple de manera efectiva.</p>
+<p>In this innovative project, I utilize cutting-edge machine learning techniques to predict the outcomes of simulated bare-knuckle fights against 15 different animal species. </p>
+<p>Leveraging Azure Functions and Python, I have crafted a complex system consisting of 45 specialized models—three for each animal, focusing on predicting possible outcomes: victory, defeat, or an uncertain result</p> 
+<p>This setup not only showcases the system's robust capability to manage intricate multi-classification tasks but also demonstrates its adaptability to the distinct characteristics and behaviors of various species.</p>
+<p>This project serves as a unique example of applying advanced analytics to creatively address hypothetical scenarios.</p>
 
 <div class="container mt-5">
     <form id="selectionForm">
@@ -21,10 +20,10 @@ showcomments = false
             <!-- Gender Selection -->
             <div class="col-md-6">
                 <div class="form-group">
-                    <label for="gender">Genero:</label>
+                    <label for="gender">Genre:</label>
                     <select class="form-control" id="gender">
-                        <option value="male">Masculino</option>
-                        <option value="female">Femenino</option>
+                        <option value="male">Male</option>
+                        <option value="female">Female</option>
                     </select>
                 </div>
             </div>
@@ -32,7 +31,7 @@ showcomments = false
             <!-- Age Group Selection -->
             <div class="col-md-6">
                 <div class="form-group">
-                    <label for="age">Edad:</label>
+                    <label for="age">Age:</label>
                     <select class="form-control" id="age">
                         <option value="18-34">18-34</option>
                         <option value="35-54">35-54</option>
@@ -43,7 +42,7 @@ showcomments = false
         </div>
     
         <!-- Submit Button -->
-        <button type="button" class="btn btn-primary col-12" onclick="loadData()">Predecir Batallas ⚔️</button>
+        <button type="button" class="btn btn-primary col-12" onclick="loadData()">Predicting Battles ⚔️</button>
     </form>
     
     <div id="cardsContainer" class="row mt-3">
