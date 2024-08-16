@@ -1,9 +1,0 @@
-/* Add custom CSS here. */
-#disqus_thread{
-    font-size: 14px !important;
-}
-.card-img-top {
-    width: 100%; /* Makes the image take the full width of the card */
-    height: 200px; /* Fixed height for all images */
-    object-fit: cover; /* Ensures the image covers the area without distorting */
-}
