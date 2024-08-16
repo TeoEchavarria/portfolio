@@ -60,7 +60,7 @@ languages:
       profileMode:
         enabled: true
         title: TeoEchavarria
-        imageUrl: "https://raw.githubusercontent.com/googlefonts/noto-emoji/master/svg/emoji_u1f9d1_1f3fb_200d_1f4bb.svg"
+        imageUrl: "https://raw.githubusercontent.com/TeoEchavarria/TeoEchavarria.github.io/master/images/index.jpeg"
         imageTitle: ProfileMode image
         # imageWidth: 120
         # imageHeight: 120
