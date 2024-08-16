@@ -3,3 +3,56 @@ This is just a placeholder blank stylesheet so as to support adding custom style
 
 Read https://github.com/adityatelange/hugo-PaperMod/wiki/FAQs#bundling-custom-css-with-themes-assets for more info
 */
+
+.carousel_images {
+    position: relative;
+    max-width: 100%;
+    margin: auto;
+    overflow: hidden;
+    border: 2px solid #333;
+    border-radius: 10px;
+}
+.slides_carousel_images {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+.slides_carousel_images img {
+    width: 100%;
+    border-radius: 10px;
+}
+.prev_carousel_images, .next_carousel_images {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    padding: 16px;
+    margin-top: -22px;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+.next_carousel_images {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+}
+.dots_carousel_images {
+    text-align: center;
+    padding: 10px;
+    background: #333;
+}
+.dots_carousel_images span {
+    cursor: pointer;
+    height: 15px;
+    width: 15px;
+    margin: 0 2px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+}
+.dots_carousel_images .active {
+    background-color: #717171;
+}

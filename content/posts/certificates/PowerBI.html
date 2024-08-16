@@ -1,0 +1,65 @@
+---
+title: "Microsoft Power BI"
+summary: "Microsoft Certificate: Microsoft Power BI"
+date: 2023-07-14
+series: ["courses"]
+aliases: ["/microsoft-power-bi-certificate"]
+tags: ["platzi", "science"]
+author: ["Mateo Echavarria"]
+---
+
+This series of courses focuses on the professional use of Power BI. It covers everything from the basics, such as connecting to databases, to the creation and presentation of detailed reports.
+
+
+<div class="carousel_image">
+  <div class="slides_carousel_images">
+      <img src="https://github.com/TeoEchavarria/TeoEchavarria.github.io/blob/master/images/certificates/PowerBI/PowerBI1.jpg?raw=true" alt="Image 1">
+      <img src="https://github.com/TeoEchavarria/TeoEchavarria.github.io/blob/master/images/certificates/PowerBI/PowerBI2.jpg?raw=true" alt="Image 2">
+      <img src="https://github.com/TeoEchavarria/TeoEchavarria.github.io/blob/master/images/certificates/PowerBI/PowerBI3.jpg?raw=true" alt="Image 3">
+      <img src="https://github.com/TeoEchavarria/TeoEchavarria.github.io/blob/master/images/certificates/PowerBI/PowerBI4_page-0001.jpg?raw=true" alt="Image 4">
+      <img src="https://github.com/TeoEchavarria/TeoEchavarria.github.io/blob/master/images/certificates/PowerBI/PowerBI5_page-0001.jpg?raw=true" alt="Image 5">
+      <img src="https://github.com/TeoEchavarria/TeoEchavarria.github.io/blob/master/images/certificates/PowerBI/PowerBI6_page-0001.jpg?raw=true" alt="Image 6">
+      <img src="https://github.com/TeoEchavarria/TeoEchavarria.github.io/blob/master/images/certificates/PowerBI/PowerBI7_page-0001.jpg?raw=true" alt="Image 7">
+      <img src="https://github.com/TeoEchavarria/TeoEchavarria.github.io/blob/master/images/certificates/PowerBI/PowerBI8_page-0001.jpg?raw=true" alt="Image 8">
+  </div>
+  <a class="prev_carousel_images" onclick="moveSlides(-1)">&#10094;</a>
+  <a class="next_carousel_images" onclick="moveSlides(1)">&#10095;</a>
+</div>
+
+<div class="dots_carousel_images">
+  <span class="dot_carousel_images" onclick="currentSlide(1)"></span>
+  <span class="dot_carousel_images" onclick="currentSlide(2)"></span>
+  <span class="dot_carousel_images" onclick="currentSlide(3)"></span>
+  <span class="dot_carousel_images" onclick="currentSlide(4)"></span>
+  <span class="dot_carousel_images" onclick="currentSlide(5)"></span>
+  <span class="dot_carousel_images" onclick="currentSlide(6)"></span>
+  <span class="dot_carousel_images" onclick="currentSlide(7)"></span>
+  <span class="dot_carousel_images" onclick="currentSlide(8)"></span>
+</div>
+
+<script>
+  let slideIndex = 0;
+  showSlides(slideIndex);
+
+  function moveSlides(n) {
+      showSlides(slideIndex += n);
+  }
+
+  function currentSlide(n) {
+      showSlides(slideIndex = n - 1);
+  }
+
+  function showSlides(n) {
+      const slides = document.querySelectorAll('.slides_carousel_images img');
+      const dots = document.querySelectorAll('.dot_carousel_images');
+      
+      if (n >= slides.length) slideIndex = 0;
+      if (n < 0) slideIndex = slides.length - 1;
+      
+      slides.forEach(slide => slide.style.display = 'none');
+      dots.forEach(dot => dot.classList.remove('active'));
+      
+      slides[slideIndex].style.display = 'block';
+      dots[slideIndex].classList.add('active');
+  }
+</script>
