@@ -127,7 +127,7 @@ params:
     Content: >
       👋 Welcome to the repository of my personal website. This site is designed to showcase my skills and projects in the areas of data analysis, data science, and data visualization using tools like Python, R, and Power BI.
       
-      - [Projects](uri) | [Certificates](uri) | [Notes](uri) | [CV](uri)
+      - [Projects](https://teoechavarria.github.io/posts/projects/) | [Certificates](https://teoechavarria.github.io/about/) | [Notes](https://teoechavarria.github.io/knowledge-page/)
 
   socialIcons:
     - name: github
@@ -154,9 +154,9 @@ params:
   # icon: icon.png
   # iconHeight: 35
 
-  # analytics:
-  #     google:
-  #         SiteVerificationTag: "XYZabc"
+  analytics:
+      google:
+          SiteVerificationTag: "G-NP0249HGMZ"
 
   assets:
     disableHLJS: true
