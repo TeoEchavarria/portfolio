@@ -66,18 +66,20 @@ languages:
         # imageHeight: 120
         subtitle: "📐 Mathematician | 🧠 Data Science | 📈 Power BI Consultant"
         buttons:
-          - name: Blog
-            url: posts
-          - name: Profile Mode
-            url: https://github.com/adityatelange/hugo-PaperMod/wiki/Features#profile-mode
-          - name: Blog
-            url: posts
-          - name: Profile Mode
-            url: https://github.com/adityatelange/hugo-PaperMod/wiki/Features#profile-mode
-          - name: Blog
-            url: posts
-          - name: Profile Mode
-            url: https://github.com/adityatelange/hugo-PaperMod/wiki/Features#profile-mode
+          - name: IBM - Data Analysis with Python
+            url: dataibmbasic/
+          - name: Macro Training in Artificial Intelligence
+            url: macroentrenamiento/
+          - name: Microsoft Power BI
+            url: powerbi/
+          - name: Backend with Python and Django
+            url: backendpython/
+          - name: School of Mathematics
+            url: escuelamatematicas/
+          - name: Mathematics for Programming
+            url: matematicasprogramacion/
+          - name: Science
+            url: ciencias/
 
 outputs:
   home:
