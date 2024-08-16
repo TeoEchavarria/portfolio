@@ -15,4 +15,4 @@ I have acquired knowledge in Git & GitHub, Databases, Computational Thinking and
 Currently, I work mainly with FastAPI and Flask. I have used these frameworks in my Human vs. Animal project to serve the prediction models I developed. In addition, I use them regularly in my work as a Data Scientist to expose data analysis and statistical functionalities to the frontend.
 
 
-![backend-python](https://raw.githubusercontent.com/TeoEchavarria/TeoEchavarria.github.io/master/images/certificates/django_backend.png#center)
+[![backend-python](https://raw.githubusercontent.com/TeoEchavarria/TeoEchavarria.github.io/master/images/certificates/django_backend.png#center)](https://platzi.com/p/MateoEchavarria/ruta/3-backend-python/diploma/detalle/)

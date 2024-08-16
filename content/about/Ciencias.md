@@ -12,4 +12,4 @@ author: ["Mateo Echavarria"]
 
 I have completed a short course dedicated to the Sciences, covering topics such as Basic Mathematics, Physics, and Astrobiology.
 
-![science](https://raw.githubusercontent.com/TeoEchavarria/TeoEchavarria.github.io/master/images/certificates/ciencias.png#center)
+[![science](https://raw.githubusercontent.com/TeoEchavarria/TeoEchavarria.github.io/master/images/certificates/ciencias.png#center)](https://platzi.com/p/MateoEchavarria/ruta/50-ciencia/diploma/detalle/)

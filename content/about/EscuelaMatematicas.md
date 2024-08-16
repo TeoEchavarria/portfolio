@@ -10,4 +10,4 @@ author: ["Mateo Echavarria"]
 
 In this learning path, I covered concepts such as Linear Algebra, Differential Calculus, Fundamentals of Physics, Algorithms and Logical Thinking, Computational Statistics, Descriptive Statistics, Differential Equations, Numerical Models, and Mechanical Physics. This was also accompanied by Python.
 
-![School of Mathematics](https://raw.githubusercontent.com/TeoEchavarria/TeoEchavarria.github.io/master/images/certificates/escuela_matematicas.png#center)
+[![School of Mathematics](https://raw.githubusercontent.com/TeoEchavarria/TeoEchavarria.github.io/master/images/certificates/escuela_matematicas.png#center)](https://platzi.com/p/MateoEchavarria/ruta/6810-matematicas/diploma/detalle/)

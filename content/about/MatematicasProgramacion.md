@@ -10,4 +10,4 @@ author: ["Mateo Echavarria"]
 
 This is a summarized course from the School of Mathematics, covering topics such as Algebra, Algorithms, Discrete Mathematics, and Differential Equations.
 
-![Mathematics for Programming](https://raw.githubusercontent.com/TeoEchavarria/TeoEchavarria.github.io/master/images/certificates/math_for_program.png#center)
+[![Mathematics for Programming](https://raw.githubusercontent.com/TeoEchavarria/TeoEchavarria.github.io/master/images/certificates/math_for_program.png#center)](https://platzi.com/p/MateoEchavarria/ruta/24-matematicas-programacion/diploma/detalle/)
