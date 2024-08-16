@@ -35,7 +35,7 @@ languages:
           url: tags/
           weight: 10
         - name: Notes
-          url: https://github.com/adityatelange/hugo-PaperMod/wiki/
+          url: https://teoechavarria.github.io/knowledge-page/
 
   About:
     main:
@@ -66,10 +66,18 @@ languages:
         # imageHeight: 120
         subtitle: "📐 Mathematician | 🧠 Data Science | 📈 Power BI Consultant"
         buttons:
-          # - name: Blog
-          #   url: posts
-          # - name: Profile Mode
-          #   url: https://github.com/adityatelange/hugo-PaperMod/wiki/Features#profile-mode
+          - name: Blog
+            url: posts
+          - name: Profile Mode
+            url: https://github.com/adityatelange/hugo-PaperMod/wiki/Features#profile-mode
+          - name: Blog
+            url: posts
+          - name: Profile Mode
+            url: https://github.com/adityatelange/hugo-PaperMod/wiki/Features#profile-mode
+          - name: Blog
+            url: posts
+          - name: Profile Mode
+            url: https://github.com/adityatelange/hugo-PaperMod/wiki/Features#profile-mode
 
 outputs:
   home:
