@@ -1,6 +1,6 @@
 # If your site is in 'https', then make sure your base url isn't written using 'http' otherwise your sitemap would
 # contain http (as opposeed to https) URLs. This would affect Google indexing of your URLs.
-baseURL: "https://teoechavarria.github.io/"
+baseURL: "https://teoechavarria.github.io/portfolio"
 title: TeoEchavarria
 copyright: "© [Mateo Echavarria]()"
 paginate: 5
@@ -35,7 +35,7 @@ languages:
           url: tags/
           weight: 10
         - name: Notes
-          url: https://teoechavarria.github.io/knowledge-page/
+          url: https://teoechavarria.github.io/knowledge/
 
   About:
     main:
@@ -127,7 +127,7 @@ params:
     Content: >
       👋 Welcome to the repository of my personal website. This site is designed to showcase my skills and projects in the areas of data analysis, data science, and data visualization using tools like Python, R, and Power BI.
       
-      - [Projects](https://teoechavarria.github.io/posts/projects/) | [Certificates](https://teoechavarria.github.io/about/) | [Notes](https://teoechavarria.github.io/knowledge-page/)
+      - [Projects](https://teoechavarria.github.io/posts/projects/) | [Certificates](https://teoechavarria.github.io/about/) | [Notes](https://teoechavarria.github.io/knowledge/)
 
   socialIcons:
     - name: github

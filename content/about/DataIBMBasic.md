@@ -10,4 +10,4 @@ author: ["Mateo Echavarria"]
 
 I have completed an exciting course where I delved into the essential fundamentals of data processing, management, and prediction. As I progressed through the content, I not only gained knowledge of basic concepts but also explored the thrilling world of elementary machine learning models. My learning journey took me from the foundations to building a solid base in these key subjects.
 
-[![IBM - Data Analysis with Python](https://raw.githubusercontent.com/TeoEchavarria/TeoEchavarria.github.io/master/images/certificates/coursera_IBM_DBP.jpg#center)](https://www.coursera.org/account/accomplishments/verify/QGN3YZK7L8N3)
+[![IBM - Data Analysis with Python](https://raw.githubusercontent.com/TeoEchavarria/TeoEchavarria.github.io/master/images/certificates/coursera_IBM_DBP.jpg#center)](https://www.coursera.org/account/accomplishments/verify/QGN3YZK7L8N3 as1)

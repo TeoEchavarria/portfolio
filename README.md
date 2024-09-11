@@ -1,4 +1,4 @@
-# TeoEchavarria.github.io
+# TeoEchavarria
 
 Bienvenido al repositorio de mi página web personal. Este sitio está diseñado para ser un escaparate de mis habilidades y proyectos en el ámbito del análisis de datos, la ciencia de datos y la visualización de datos con herramientas como Python, R y Power BI.
 
