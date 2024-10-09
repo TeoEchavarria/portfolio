@@ -6,6 +6,7 @@ weight: 1
 aliases: ["/teo-bot"]
 tags: ["ai", "ml", "llm", "embeddings", "bot", "nlp"]
 author: ["Mateo Echavarria"]
+ShowToc: true
 ---
 
 👋 **Welcome to TeoBot on Telegram!**
@@ -24,3 +25,7 @@ TeoBot is a personal assistant chatbot that leverages my repository of interconn
 - **Direct Access Buttons:** Navigate directly to related notes with the click of a button during chats.
 
 Interested in exploring TeoBot? Contact me to gain access to @knowledge_notes_bot on Telegram!
+
+<div style="text-align: center;">
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/PJ1oegPL1zo?vq=hd1080" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
