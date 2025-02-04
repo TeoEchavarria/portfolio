@@ -11,6 +11,12 @@ ShowToc: true
 
 👋 **Welcome to TeoBot on Telegram!**
 
+<p align="center">
+  <a href="https://t.me/knowledge_notes_bot">
+    <img src="https://img.shields.io/badge/-telegram-red?color=white&logo=telegram&logoColor=black"/>
+  </a>
+</p>
+
 TeoBot is a personal assistant chatbot that leverages my repository of interconnected notes to provide rich, contextual responses. Dive into a seamless interactive experience that combines advanced search and AI-driven dialogue.
 
 ### **Current Features:**
